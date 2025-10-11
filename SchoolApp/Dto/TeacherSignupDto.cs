@@ -36,8 +36,8 @@ namespace SchoolApp.Dto
         [StringLength(100, MinimumLength = 2, ErrorMessage = "Institution must be between 2 and 50 characters.")]
         public string? Institution { get; set; }
 
-        [Required(ErrorMessage = "The {0} field is required.")]
-        [EnumDataType(typeof(UserRole), ErrorMessage = "Invalid user role")]
-        public UserRole? UserRole { get; set; }
+        // [Required(ErrorMessage = "The {0} field is required.")]
+        // [EnumDataType(typeof(UserRole), ErrorMessage = "Invalid user role")]
+        // public UserRole? UserRole { get; set; }
     }
 }

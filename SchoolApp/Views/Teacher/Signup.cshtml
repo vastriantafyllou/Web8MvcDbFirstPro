@@ -65,15 +65,15 @@
                                placeholder="Enter institution" />
                         <span asp-validation-for="Institution" class="text-danger"></span>
                     </div>
-                    <label asp-for="UserRole" class="col-md-1 col-form-label text-start">Role</label>
-                    <div class="col-md-5" style="min-height: 4rem;">
-                        <select class="form-select" aria-label="Default select example" asp-for="UserRole">
-                            @* <option selected>Select Role</option> *@
-                            <option value="Teacher" selected>Teacher</option>
-                            @* <option value="Student">Student</option> *@
-                            @* <option value="Admin">Admin</option> *@
-                        </select>
-                    </div>
+                    @* <label asp-for="UserRole" class="col-md-1 col-form-label text-start">Role</label> *@
+                    @* <div class="col-md-5" style="min-height: 4rem;"> *@
+                    @*     <select class="form-select" aria-label="Default select example" asp-for="UserRole"> *@
+                    @*         $1$ <option selected>Select Role</option> #1# *@
+                    @*         <option value="Teacher" selected>Teacher</option> *@
+                    @*         $1$ <option value="Student">Student</option> #1# *@
+                    @*         $1$ <option value="Admin">Admin</option> #1# *@
+                    @*     </select> *@
+                    @* </div> *@
                 </div>
                 <div class="row">
                     <div class="offset-md-1 col-md-5 d-grid">
