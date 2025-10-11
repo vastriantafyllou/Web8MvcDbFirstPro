@@ -29,12 +29,19 @@ namespace SchoolApp.Services
             try
             {
                 //user = ExtractUser(request);
-                User? existingUser = await unitOfWork.UserRepository.GetUserByUsernameAsync(user.Username);
+                User? existingUsername = await unitOfWork.UserRepository.GetUserByUsernameAsync(user.Username);
 
-                if (existingUser != null)
+                if (existingUsername != null)
                 {
                     throw new EntityAlreadyExistsException("User", "User with username " +
-                        existingUser.Username + " already exists");
+                        existingUsername.Username + " already exists");
+                }
+
+                User? existingUserEmail = await unitOfWork.UserRepository.GetUserByEmailAsync(user.Email);
+                if (existingUserEmail != null)
+                {
+                    throw new EntityAlreadyExistsException("User", "User with email " +
+                        existingUserEmail.Email + " already exists");
                 }
 
                 user.Password = EncryptionUtil.Encrypt(user.Password);
