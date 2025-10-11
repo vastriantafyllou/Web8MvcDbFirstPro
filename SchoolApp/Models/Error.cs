@@ -4,7 +4,7 @@ namespace SchoolApp.Models
     {
         public string? Code { get; set; }
         public string? Message { get; set; }
-        public string? field { get; set; }
+        public string? Field { get; set; }
 
         public Error() { }
 
@@ -12,7 +12,7 @@ namespace SchoolApp.Models
         {
             Code = code;
             Message = message;
-            this.field = field;
+            this.Field = field;
         }
     }
 }
