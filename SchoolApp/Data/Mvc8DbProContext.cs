@@ -29,7 +29,7 @@ public partial class Mvc8DbProContext : DbContext
 
         modelBuilder.Entity<Course>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Courses__3214EC0766BC02CC");
+            entity.HasKey(e => e.Id).HasName("PK__Courses__3214EC070A06F5E2");
 
             entity.HasIndex(e => e.Description, "IX_Courses_Description");
 
@@ -55,7 +55,7 @@ public partial class Mvc8DbProContext : DbContext
                         .HasConstraintName("FK_CoursesStudents_Courses"),
                     j =>
                     {
-                        j.HasKey("CourseId", "StudentId").HasName("PK__CoursesS__4A01231ED3BE30C9");
+                        j.HasKey("CourseId", "StudentId").HasName("PK__CoursesS__4A01231E99667F55");
                         j.ToTable("CoursesStudents");
                         j.HasIndex(new[] { "CourseId" }, "IX_CoursesStudents_CourseId");
                         j.HasIndex(new[] { "StudentId" }, "IX_CoursesStudents_StudentId");
@@ -64,7 +64,7 @@ public partial class Mvc8DbProContext : DbContext
 
         modelBuilder.Entity<Student>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Students__3214EC079D1E8D8F");
+            entity.HasKey(e => e.Id).HasName("PK__Students__3214EC076184DBC1");
 
             entity.HasIndex(e => e.Am, "IX_Students_AM").IsUnique();
 
@@ -84,7 +84,7 @@ public partial class Mvc8DbProContext : DbContext
 
         modelBuilder.Entity<Teacher>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Teachers__3214EC079786FA38");
+            entity.HasKey(e => e.Id).HasName("PK__Teachers__3214EC07CA5D357F");
 
             entity.HasIndex(e => e.UserId, "IX_Teachers_UserId").IsUnique();
 
@@ -99,6 +99,8 @@ public partial class Mvc8DbProContext : DbContext
 
         modelBuilder.Entity<User>(entity =>
         {
+            entity.HasKey(e => e.Id).HasName("PK__Users__3214EC07AF1BA580");
+
             entity.HasIndex(e => e.Email, "IX_Users_Email").IsUnique();
 
             entity.HasIndex(e => e.Username, "IX_Users_Username").IsUnique();
